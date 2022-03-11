@@ -1,5 +1,5 @@
 {% set name = "flatsurf" %}
-{% set version = "3.10.1" %}
+{% set version = "3.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,16 +7,16 @@ package:
 
 source:
   url: https://github.com/flatsurf/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 474cd82f3cd4d2ae86ab8d595ac531814316fc248fea139ebec9e49f4e757459
+  sha256: 3dc576c51ba212655cb998d2e3078a99da356cacc403af88973aeb3ca797b4cf
 
 build:
-  number: 1
+  number: 0
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
 outputs:
   - name: libflatsurf
-    script: build-libflatsurf.sh   # [not win]
+    script: build-libflatsurf.sh  # [not win]
     script: build-libflatsurf.bat  # [win]
     run_exports:
       - {{ pin_subpackage("libflatsurf") }}
