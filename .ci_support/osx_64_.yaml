@@ -11,7 +11,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '12'
+- '14'
 fmt:
 - '8'
 gmp:
@@ -21,7 +21,7 @@ libeantic:
 libexactreal:
 - '2'
 libflint:
-- '2.8'
+- '2.9'
 libintervalxt:
 - '3'
 macos_machine:
@@ -35,6 +35,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
+- 3.10.* *_cpython
 - 3.7.* *_cpython
 - 3.8.* *_cpython
 - 3.9.* *_cpython
