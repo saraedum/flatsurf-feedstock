@@ -23,7 +23,7 @@ libeantic:
 libexactreal:
 - '2'
 libflint:
-- '2.8'
+- '2.9'
 libintervalxt:
 - '3'
 pin_run_as_build:

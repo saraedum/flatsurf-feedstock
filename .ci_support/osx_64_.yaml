@@ -21,7 +21,7 @@ libeantic:
 libexactreal:
 - '2'
 libflint:
-- '2.8'
+- '2.9'
 libintervalxt:
 - '3'
 macos_machine:
