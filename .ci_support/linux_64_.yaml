@@ -1,5 +1,5 @@
 arb:
-- '2.22'
+- '2.23'
 boost_cpp:
 - 1.74.0
 cdt_name:
@@ -15,7 +15,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 fmt:
-- '8'
+- '9'
 gmp:
 - '6'
 libeantic:
