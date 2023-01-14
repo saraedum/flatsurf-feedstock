@@ -12,7 +12,7 @@ source:
     - 0001-Fix-includes-for-some-versions-of-clang.patch
 
 build:
-  number: 1
+  number: 2
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
