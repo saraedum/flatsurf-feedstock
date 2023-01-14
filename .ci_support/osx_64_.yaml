@@ -19,7 +19,7 @@ gmp:
 libeantic:
 - '1'
 libexactreal:
-- '2'
+- '3'
 libflint:
 - '2.9'
 libintervalxt:
@@ -29,14 +29,11 @@ macos_machine:
 pin_run_as_build:
   boost-cpp:
     max_pin: x.x.x
-  gmp:
-    max_pin: x
   python:
     min_pin: x.x
     max_pin: x.x
 python:
 - 3.10.* *_cpython
-- 3.7.* *_cpython
 - 3.8.* *_cpython
 - 3.9.* *_cpython
 target_platform:
