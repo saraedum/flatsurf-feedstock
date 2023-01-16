@@ -1,5 +1,5 @@
 {% set name = "flatsurf" %}
-{% set version = "3.12.0" %}
+{% set version = "3.13.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/flatsurf/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3e587bc1cb6deacc3834868100f62275abc90acb259da6f795011d30475a5743
+  sha256: 4e0ef0817a4b7c2c594f5854a7f520326c08483fe62bd01caf626d77c5d2d9dd
   patches:
-    - 0001-Fix-includes-for-some-versions-of-clang.patch
+    - 0001-Add-missing-include.patch
 
 build:
-  number: 2
+  number: 0
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
