@@ -7,9 +7,7 @@ package:
 
 source:
   url: https://github.com/flatsurf/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 059b494cb1138df1d385b15fd070cef24dfe4a29709234c0567fdf439be3f6ff
-  patches:
-    - 0001-Fix-includes-for-some-versions-of-clang.patch
+  sha256: 152929c07be5c847ed66db88002e629fca34b172d1615ee90a0f105226bf3c24
 
 build:
   number: 0
