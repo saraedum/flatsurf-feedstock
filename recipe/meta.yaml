@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/flatsurf/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: d3b83f0da699f7631a4e6dfdcf99cd6b9840b36174d022521438e855be1ef94d
-  patches:
-    - 0001-Add-missing-include.patch
 
 build:
   number: 0
