@@ -8,6 +8,8 @@ if [[ "$target_platform" == osx* ]]; then
     CXXFLAGS="$CXXFLAGS -DCATCH_CONFIG_NO_CPP17_UNCAUGHT_EXCEPTIONS"
     # re-enable mem_fun_ref in macOS when building with C++17 (used by dependency PPL.)
     CXXFLAGS="$CXXFLAGS -D_LIBCPP_ENABLE_CXX17_REMOVED_BINDERS"
+    # Work around missing symbols in old SDK, https://conda-forge.org/docs/maintainer/knowledge_base.html#newer-c-features-with-old-sdk
+    CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
 fi
 
 if [[ "$target_platform" == win* ]]; then
