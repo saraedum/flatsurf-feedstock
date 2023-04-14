@@ -1,5 +1,5 @@
 {% set name = "flatsurf" %}
-{% set version = "3.13.2" %}
+{% set version = "3.13.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/flatsurf/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b0a08deaf5885c54e7dd845c09b78380786891d74bdd2b067466318cc4a7c536
+  sha256: ff51c6d1570a0449fd8eb40671aa07f3aefd870bbdaa31e37ec2db32b5ab0c88
 
 build:
   number: 0
