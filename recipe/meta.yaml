@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/flatsurf/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 522aa0d4ca85203acf4c67e66fee93acb2f7f907d60407f8583fe5ed3f1a760d
+  sha256: ff51c6d1570a0449fd8eb40671aa07f3aefd870bbdaa31e37ec2db32b5ab0c88
 
 build:
   number: 0
