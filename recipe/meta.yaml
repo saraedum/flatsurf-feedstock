@@ -30,7 +30,7 @@ outputs:
         - {{ compiler('cxx') }}
       host:
         - arb
-        - boost-cpp
+        - libboost-headers
         - fmt
         - gmp   # [unix]
         - mpir  # [win]
@@ -57,7 +57,7 @@ outputs:
         - gnuconfig  # [unix]
         - {{ compiler('cxx') }}
       host:
-        - boost-cpp
+        - libboost-headers
         - python
         - cppyy
         - cppyythonizations
@@ -67,7 +67,7 @@ outputs:
         - {{ pin_subpackage("libflatsurf") }}
       run:
         # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
-        - boost-cpp
+        - libboost-headers
         - python
         - cppyy
         - cppyythonizations
