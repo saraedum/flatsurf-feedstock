@@ -14,8 +14,6 @@ fmt:
 - '10'
 gmp:
 - '6'
-boost_cpp:
-- '1.78.0'
 libeantic:
 - '1'
 libexactreal:
