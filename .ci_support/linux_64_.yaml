@@ -17,7 +17,7 @@ fmt:
 gmp:
 - '6'
 libboost_devel:
-- '1.82'
+- '1.78.0'
 libeantic:
 - '1'
 libexactreal:
