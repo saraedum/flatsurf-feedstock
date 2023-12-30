@@ -62,7 +62,7 @@ outputs:
         - gnuconfig  # [unix]
         - {{ compiler('cxx') }}
       host:
-        # Note that the liboost-devel from libflatsurf forces these headers to be
+        # Note that the libboost-devel from libflatsurf forces these headers to be
         # compatible with ones used when building libflatsurf.
         - libboost-headers
         - python
@@ -74,7 +74,7 @@ outputs:
         - {{ pin_subpackage("libflatsurf") }}
       run:
         # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
-        # Note that the liboost-devel from libflatsurf forces these headers to be
+        # Note that the libboost-devel from libflatsurf forces these headers to be
         # compatible with ones used when building libflatsurf.
         - libboost-headers
         - python
