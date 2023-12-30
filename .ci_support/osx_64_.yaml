@@ -14,7 +14,7 @@ fmt:
 - '10'
 gmp:
 - '6'
-libboost_devel:
+boost_cpp:
 - '1.78.0'
 libeantic:
 - '1'
