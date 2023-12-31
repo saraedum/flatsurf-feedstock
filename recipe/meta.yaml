@@ -34,7 +34,7 @@ outputs:
         # built with a compatible version of the headers. Therefore, we add a
         # liboost pin to our run exports so libboost-headers are going to be
         # in a compatible version.
-        - liboost-devel
+        - libboost-devel
         - fmt
         - gmp   # [unix]
         - mpir  # [win]
@@ -61,7 +61,7 @@ outputs:
         - gnuconfig  # [unix]
         - {{ compiler('cxx') }}
       host:
-        # Note that the liboost-devel from libflatsurf forces these headers to be
+        # Note that the libboost-devel from libflatsurf forces these headers to be
         # compatible with ones used when building libflatsurf.
         - boost-headers
         - python
@@ -73,7 +73,7 @@ outputs:
         - {{ pin_subpackage("libflatsurf") }}
       run:
         # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
-        # Note that the liboost-devel from libflatsurf forces these headers to be
+        # Note that the libboost-devel from libflatsurf forces these headers to be
         # compatible with ones used when building libflatsurf.
         - boost-headers
         - python
