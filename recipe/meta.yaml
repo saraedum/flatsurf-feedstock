@@ -1,5 +1,5 @@
 {% set name = "flatsurf" %}
-{% set version = "3.13.3" %}
+{% set version = "3.13.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/flatsurf/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ff51c6d1570a0449fd8eb40671aa07f3aefd870bbdaa31e37ec2db32b5ab0c88
+  sha256: 142c127938a79d896d79630c7bc2c692c5ab9fdf937bbe80989e0207b24a8ce5
 
 build:
   number: 0
@@ -29,8 +29,12 @@ outputs:
         - autotools_clang_conda  # [win]
         - {{ compiler('cxx') }}
       host:
-        - arb
-        - boost-cpp
+        # We only need the libboost-headers at compile time. However, since we
+        # use bits of boost in our API, code built against libflatsurf must be
+        # built with a compatible version of the headers. Therefore, we add a
+        # liboost pin to our run exports so libboost-headers are going to be
+        # in a compatible version.
+        - libboost-devel
         - fmt
         - gmp   # [unix]
         - mpir  # [win]
@@ -57,7 +61,9 @@ outputs:
         - gnuconfig  # [unix]
         - {{ compiler('cxx') }}
       host:
-        - boost-cpp
+        # Note that the libboost-devel from libflatsurf forces these headers to be
+        # compatible with ones used when building libflatsurf.
+        - libboost-headers
         - python
         - cppyy
         - cppyythonizations
@@ -67,7 +73,9 @@ outputs:
         - {{ pin_subpackage("libflatsurf") }}
       run:
         # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
-        - boost-cpp
+        # Note that the libboost-devel from libflatsurf forces these headers to be
+        # compatible with ones used when building libflatsurf.
+        - libboost-headers
         - python
         - cppyy
         - cppyythonizations
