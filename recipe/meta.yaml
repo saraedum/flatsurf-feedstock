@@ -29,8 +29,12 @@ outputs:
         - autotools_clang_conda  # [win]
         - {{ compiler('cxx') }}
       host:
-        - arb
-        - boost-cpp
+        # We only need the libboost-headers at compile time. However, since we
+        # use bits of boost in our API, code built against libflatsurf must be
+        # built with a compatible version of the headers. Therefore, we add a
+        # liboost pin to our run exports so libboost-headers are going to be
+        # in a compatible version.
+        - liboost-headers
         - fmt
         - gmp   # [unix]
         - mpir  # [win]
@@ -57,7 +61,9 @@ outputs:
         - gnuconfig  # [unix]
         - {{ compiler('cxx') }}
       host:
-        - boost-cpp
+        # Note that the liboost-devel from libflatsurf forces these headers to be
+        # compatible with ones used when building libflatsurf.
+        - boost-headers
         - python
         - cppyy
         - cppyythonizations
@@ -67,7 +73,9 @@ outputs:
         - {{ pin_subpackage("libflatsurf") }}
       run:
         # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
-        - boost-cpp
+        # Note that the liboost-devel from libflatsurf forces these headers to be
+        # compatible with ones used when building libflatsurf.
+        - boost-headers
         - python
         - cppyy
         - cppyythonizations
