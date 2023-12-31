@@ -34,7 +34,7 @@ outputs:
         # built with a compatible version of the headers. Therefore, we add a
         # liboost pin to our run exports so libboost-headers are going to be
         # in a compatible version.
-        - liboost-headers
+        - liboost-devel
         - fmt
         - gmp   # [unix]
         - mpir  # [win]
