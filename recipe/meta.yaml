@@ -70,6 +70,7 @@ outputs:
         - setuptools
         - pytest
         - pyexactreal
+        - pyintervalxt
         - {{ pin_subpackage("libflatsurf") }}
       run:
         # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
@@ -81,6 +82,7 @@ outputs:
         - cppyythonizations
         - gmpxxyy
         - pyexactreal
+        - pyintervalxt
         # A subpackage does not see the run_exports of another subpackage:
         # https://github.com/conda/conda-build/issues/3478
         - {{ pin_subpackage("libflatsurf") }}
