@@ -1,5 +1,5 @@
 {% set name = "flatsurf" %}
-{% set version = "3.13.5" %}
+{% set version = "3.14.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/flatsurf/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 142c127938a79d896d79630c7bc2c692c5ab9fdf937bbe80989e0207b24a8ce5
+  sha256: f5d4074606b01877e667a6a3d35944fdfb46b7cfa93959cef82542c7c60ebf7f
 
 build:
-  number: 1
+  number: 0
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
@@ -70,6 +70,7 @@ outputs:
         - setuptools
         - pytest
         - pyexactreal
+        - pyintervalxt
         - {{ pin_subpackage("libflatsurf") }}
       run:
         # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
@@ -81,6 +82,7 @@ outputs:
         - cppyythonizations
         - gmpxxyy
         - pyexactreal
+        - pyintervalxt
         # A subpackage does not see the run_exports of another subpackage:
         # https://github.com/conda/conda-build/issues/3478
         - {{ pin_subpackage("libflatsurf") }}
