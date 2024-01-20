@@ -1,5 +1,5 @@
 {% set name = "flatsurf" %}
-{% set version = "3.14.0" %}
+{% set version = "3.14.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/flatsurf/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f5d4074606b01877e667a6a3d35944fdfb46b7cfa93959cef82542c7c60ebf7f
+  sha256: 3c8279930b09e512930adff20bd11d2de0c8133e5409475f9868c93c99bf5633
 
 build:
-  number: 2
+  number: 0
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
