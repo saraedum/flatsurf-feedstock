@@ -10,7 +10,7 @@ source:
   sha256: 3c8279930b09e512930adff20bd11d2de0c8133e5409475f9868c93c99bf5633
 
 build:
-  number: 0
+  number: 1
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
@@ -28,6 +28,7 @@ outputs:
         - gnuconfig  # [unix]
         - autotools_clang_conda  # [win]
         - {{ compiler('cxx') }}
+        - {{ stdlib("c") }}
       host:
         # We only need the libboost-headers at compile time. However, since we
         # use bits of boost in our API, code built against libflatsurf must be
@@ -60,6 +61,7 @@ outputs:
         - autotools_clang_conda  # [win]
         - gnuconfig  # [unix]
         - {{ compiler('cxx') }}
+        - {{ stdlib("c") }}
       host:
         # Note that the libboost-devel from libflatsurf forces these headers to be
         # compatible with ones used when building libflatsurf.
