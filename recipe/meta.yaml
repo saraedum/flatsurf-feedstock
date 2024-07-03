@@ -91,7 +91,7 @@ outputs:
         # https://github.com/conda/conda-build/issues/3478
         - {{ pin_subpackage("libflatsurf") }}
     test:
-      requires:  # [osx]
+      requires:   # [osx]
         # Work around https://github.com/conda-forge/cppyy-feedstock/issues/78 on the CI machines.
         - libcxx<17  # [osx]
       imports:
