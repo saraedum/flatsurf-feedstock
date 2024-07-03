@@ -1,5 +1,5 @@
 {% set name = "flatsurf" %}
-{% set version = "3.14.1" %}
+{% set version = "3.14.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/flatsurf/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3c8279930b09e512930adff20bd11d2de0c8133e5409475f9868c93c99bf5633
+  sha256: c2df984c66eb60ccdd94250a82b896d2d22453194aba582bc352a93c7e620906
 
 build:
-  number: 1
+  number: 0
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
@@ -68,6 +68,8 @@ outputs:
         - libboost-headers
         - python
         - cppyy
+        # Work around https://github.com/conda-forge/cppyy-feedstock/issues/78 on the CI machines.
+        - libcxx<17  # [osx]
         - cppyythonizations
         - setuptools
         - pytest
@@ -89,6 +91,9 @@ outputs:
         # https://github.com/conda/conda-build/issues/3478
         - {{ pin_subpackage("libflatsurf") }}
     test:
+      requires:  # [osx]
+        # Work around https://github.com/conda-forge/cppyy-feedstock/issues/78 on the CI machines.
+        - libcxx<17  # [osx]
       imports:
         - pyflatsurf
 
