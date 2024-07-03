@@ -66,6 +66,8 @@ outputs:
         - libboost-headers
         - python
         - cppyy
+        # Work around https://github.com/conda-forge/cppyy-feedstock/issues/78 on the CI machines.
+        - libcxx<17  # [osx]
         - cppyythonizations
         - setuptools
         - pytest
@@ -79,6 +81,8 @@ outputs:
         - libboost-headers
         - python
         - cppyy
+        # Work around https://github.com/conda-forge/cppyy-feedstock/issues/78 on the CI machines.
+        - libcxx<17  # [osx]
         - cppyythonizations
         - gmpxxyy
         - pyexactreal
