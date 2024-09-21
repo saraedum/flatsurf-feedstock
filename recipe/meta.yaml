@@ -10,7 +10,7 @@ source:
   sha256: e49dfa818550eb2aec727d1a16451db8fd79b211563acebaf41ab096b7dd2229
 
 build:
-  number: 0
+  number: 1
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
@@ -68,8 +68,6 @@ outputs:
         - libboost-headers
         - python
         - cppyy
-        # Work around https://github.com/conda-forge/cppyy-feedstock/issues/78 on the CI machines.
-        - libcxx<17  # [osx]
         - cppyythonizations
         - setuptools
         - pytest
@@ -91,9 +89,6 @@ outputs:
         # https://github.com/conda/conda-build/issues/3478
         - {{ pin_subpackage("libflatsurf") }}
     test:
-      requires:  # [osx]
-        # Work around https://github.com/conda-forge/cppyy-feedstock/issues/78 on the CI machines.
-        - libcxx<17  # [osx]
       imports:
         - pyflatsurf
 
